@@ -10,15 +10,16 @@ pip install virtualenv
 * Clone this git repository into your C:\Prefered\Directory
 * Navigate to your directory in terminal and create a virtual environment for this application, then activate it
 ```
-cd C:\Prefered\Directory\SQLPyExcel
+cd C:\Prefered\Directory
 
-virtualenv env
+C:\Prefered\Directory> virtualenv env
 
-env\Scripts\activate
+C:\Prefered\Directory> env\Scripts\activate
 ```
 * Finally install dependencies using the requirements.txt in C:\Prefered\Directory\SQLPyExcel
 ```
-pip install -r requirements.txt
+(env) C:\Prefered\Directory>cd SQLPyExcel
+(env) C:\Prefered\Directory\SQLPyExcel> pip install -r requirements.txt
 ```
 ## Run
 With your virtual environment activated, run:
