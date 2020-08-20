@@ -1,0 +1,45 @@
+
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>SAF-T</title>
+    <link rel="stylesheet" type="text/css"href="{% static "css/style.css"%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="info-container">
+        <h1>Tool for generating SAF-T reports</h1>
+        <p>Some information....<br> Files will be generated in the following folder: X:/Felles/SAF-T/EttEllerAnnet</p>
+    </div>
+
+    <div class="cards-container">
+        <h3>Following reports will be genrated:</h3>
+        {% for r in reports %}
+
+        <div class="report-card">
+            <h4>{{r.name}}</h4>
+        </div>
+    
+        {% endfor %}
+    </div>
+    
+    <div class="input-data">
+        <form action="generate" method="POST">
+            {% csrf_token %}
+            <label for="year">Year</label>
+            <input type="number" name="year" placeholder="Year">
+            <label for="fromPeriod">Opening Period</label>
+            <input type="number" name="fromPeriod" placeholder="Opening Period">
+            <label for="toPeriod">Closing Period</label>
+            <input type="number" name="toPeriod" placeholder="Closing Period">
+            <input class="generate-submit" type="submit" value="Generate">
+        </form>
+    </div>
+    
+
+</body>
+
+
